@@ -20,7 +20,9 @@ def should_log_url(url):
     return True
 
 
-def request_started_handler(sender, environ, **kwargs):
+def request_started_handler(sender, **kwargs):
+    print('kwargs included here: ', kwargs)
+    return
     if not should_log_url(environ['PATH_INFO']):
         return
 
